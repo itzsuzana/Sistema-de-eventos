@@ -1,108 +1,294 @@
-/* Reset básico para remover margens padrão e padronizar o tamanho dos elementos */
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Centralizando o conteúdo na tela com um fundo agradável */
+
+/* =========================
+   BODY
+========================= */
+
 body {
-    background-color: #f0f4f8; /* Fundo cinza/azul claro */
+    background: linear-gradient(
+        135deg,
+        #dfe9f3,
+        #ffffff
+    );
+
+    min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    color: #333;
-}
 
-/* Estilo da caixa principal (o cartão) */
-.cartao {
-    background-color: #ffffff;
-    padding: 40px 30px;
-    border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espaço entre os elementos de dentro */
-}
+    padding: 20px;
 
-/* Título e subtítulo */
-.cartao h1 {
-    font-size: 24px;
     color: #2c3e50;
-    margin-bottom: 5px;
 }
 
-.cartao p {
-    font-size: 14px;
+
+/* =========================
+   CARTÃO
+========================= */
+
+.cartao {
+    width: 100%;
+    max-width: 450px;
+
+    background-color: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.cartao h1 {
+    text-align: center;
+
+    font-size: 28px;
+
+    color: #2c3e50;
+
+    margin-bottom: 10px;
+}
+
+
+.subtitulo {
+    text-align: center;
+
     color: #7f8c8d;
-}
 
-/* Estilo do texto acima do input */
-label {
     font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 18px;
+}
+
+
+.campo label {
+    font-size: 14px;
+
     font-weight: 600;
-    text-align: left;
+
+    margin-bottom: 7px;
+
     color: #34495e;
-    margin-top: 10px;
 }
 
-/* Campo de digitação (Input) */
-input[type="number"] {
-    padding: 12px;
-    border: 1px solid #cbd5e1;
+
+.campo input,
+.campo select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccd6dd;
+
     border-radius: 8px;
-    font-size: 16px;
+
+    font-size: 15px;
+
     outline: none;
-    transition: border-color 0.3s ease;
+
+    background-color: #ffffff;
+
+    transition: 0.3s;
 }
 
-/* Efeito ao clicar no input (foco) */
-input[type="number"]:focus {
+
+.campo input:focus,
+.campo select:focus {
+
     border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+
+    box-shadow:
+        0 0 0 3px rgba(52, 152, 219, 0.15);
 }
 
-/* Botão de verificar */
+
+/* =========================
+   BOTÕES
+========================= */
+
 button {
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
+
+    width: 100%;
+
     padding: 14px;
-    font-size: 16px;
-    font-weight: bold;
+
+    border: none;
+
     border-radius: 8px;
+
+    background-color: #3498db;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    margin-top: 15px;
+
+    transition: 0.3s;
+
+    margin-top: 5px;
 }
 
-/* Efeito ao passar o mouse no botão */
+
 button:hover {
+
     background-color: #2980b9;
+
+    transform: translateY(-1px);
 }
 
-/* Efeito ao clicar no botão */
+
 button:active {
+
     transform: scale(0.98);
 }
 
-/* Tela de Mensagem Final */
-#tela-mensagem {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 15px;
-    color: #ffffff; /* Letra branca para contrastar com as cores do JS (red, green, etc) */
-    background-color: #95a5a6; /* Cor cinza padrão antes do JS agir */
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease; /* Transição suave na troca de cores */
+
+/* =========================
+   BOTÃO LIMPAR
+========================= */
+
+.botao-secundario {
+
+    background-color: #ecf0f1;
+
+    color: #34495e;
+
+    margin-top: 10px;
+}
+
+
+.botao-secundario:hover {
+
+    background-color: #dfe6e9;
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+.mensagem {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background-color: #ecf0f1;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+
+.mensagem h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.mensagem p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RESULTADO POSITIVO
+========================= */
+
+.sucesso {
+
+    background-color: #d5f5e3;
+
+    border: 1px solid #2ecc71;
+
+    color: #196f3d;
+}
+
+
+/* =========================
+   RESULTADO NEGATIVO
+========================= */
+
+.erro {
+
+    background-color: #fadbd8;
+
+    border: 1px solid #e74c3c;
+
+    color: #922b21;
+}
+
+
+/* =========================
+   RESULTADO DE AVISO
+========================= */
+
+.aviso {
+
+    background-color: #fef5e7;
+
+    border: 1px solid #f39c12;
+
+    color: #9c640c;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 500px) {
+
+    .cartao {
+
+        padding: 25px 20px;
+    }
+
+    .cartao h1 {
+
+        font-size: 24px;
+    }
 }

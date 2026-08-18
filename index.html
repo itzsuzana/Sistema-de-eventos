@@ -4,23 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador de idade</title>
+
+    <title>Sistema de Eventos</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="cartao">
-        <h1>Sistema de Eventos</h1>
-        <p>Digite sua idade para verificar a entrada:</p>
+    <main class="cartao">
 
-        <label>Digite sua idade dentro deste campo:</label>
-        <input type="number" id="idade" placeholder="Digite a sua senha">
+        <h1>🎟️ Sistema de Eventos</h1>
 
-        <button type="button" onclick="verificarIdade()">Verificar</button>
-        <p id="tela-mensagem"> Aguardo digitalização...</p>
+        <p class="subtitulo">
+            Preencha os dados abaixo para verificar sua entrada.
+        </p>
 
-    </div>
+        <form id="formulario">
+
+            <div class="campo">
+                <label for="nome">Nome completo:</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                >
+            </div>
+
+            <div class="campo">
+                <label for="idade">Idade:</label>
+
+                <input
+                    type="number"
+                    id="idade"
+                    placeholder="Digite sua idade"
+                    min="1"
+                    max="120"
+                >
+            </div>
+
+            <div class="campo">
+                <label for="ingresso">Tipo de ingresso:</label>
+
+                <select id="ingresso">
+
+                    <option value="">
+                        Selecione uma opção
+                    </option>
+
+                    <option value="normal">
+                        Ingresso Normal
+                    </option>
+
+                    <option value="vip">
+                        Ingresso VIP
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="horario">Horário do evento:</label>
+
+                <select id="horario">
+
+                    <option value="">
+                        Selecione o horário
+                    </option>
+
+                    <option value="18">
+                        18:00
+                    </option>
+
+                    <option value="20">
+                        20:00
+                    </option>
+
+                    <option value="22">
+                        22:00
+                    </option>
+
+                </select>
+            </div>
+
+            <button type="submit">
+                Verificar entrada
+            </button>
+
+            <button
+                type="button"
+                id="limpar"
+                class="botao-secundario"
+            >
+                Limpar
+            </button>
+
+        </form>
+
+        <section id="tela-mensagem" class="mensagem">
+
+            <h2>📋 Resultado</h2>
+
+            <p>
+                Aguardando preenchimento dos dados...
+            </p>
+
+        </section>
+
+    </main>
 
     <script src="js/script.js"></script>
 
